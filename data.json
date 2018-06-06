@@ -2,224 +2,224 @@
     "Teams": [
         {
             "name": "Brazil",
-            "winning_odds": 4.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Germany",
-            "winning_odds": 4.5,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Spain",
-            "winning_odds": 5.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "France",
-            "winning_odds": 5.5,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Belgium",
-            "winning_odds": 8.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Argentina",
-            "winning_odds": 10.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "England",
-            "winning_odds": 16.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Portugal",
-            "winning_odds": 17.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Uruguay",
-            "winning_odds": 22.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Croatia",
-            "winning_odds": 25.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Russia",
-            "winning_odds": 55.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Colombia",
-            "winning_odds": 55.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Poland",
-            "winning_odds": 60.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Denmark",
-            "winning_odds": 70.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Switzerland",
-            "winning_odds": 80.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Serbia",
-            "winning_odds": 80.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Mexico",
-            "winning_odds": 80.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Sweden",
-            "winning_odds": 150.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Egypt",
-            "winning_odds": 250.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Australia",
-            "winning_odds": 250.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Senegal",
-            "winning_odds": 475.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Nigeria",
-            "winning_odds": 500.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Peru",
-            "winning_odds": 500.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "South Korea",
-            "winning_odds": 500.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Tunisia",
-            "winning_odds": 500.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Iceland",
-            "winning_odds": 500.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Iran",
-            "winning_odds": 500.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Costa Rica",
-            "winning_odds": 500.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Japan",
-            "winning_odds": 500.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Morocco",
-            "winning_odds": 500.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Panama",
-            "winning_odds": 500.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0
         },
         {
             "name": "Saudi Arabia",
-            "winning_odds": 500.0,
+            "winning_odds": null,
             "group_points": 0,
             "seed_value": null,
             "points": 0

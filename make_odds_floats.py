@@ -4,8 +4,12 @@ import os
 
 
 def convert_win_odds_to_float(odds_string):
-    if type(odds_string) == str:
-        return odds_string if odds_string.isalpha() else round(float(Fraction(odds_string)), 2)
+    if type(odds_string) is not str:
+        return odds_string
+    elif odds_string == "EVS":
+        return 1
+    elif not odds_string.isalpha():
+        return round(float(Fraction(odds_string)), 2)
 
 filename = 'data.json'
 
