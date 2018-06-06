@@ -2,6 +2,7 @@ import json
 from pprint import pprint
 import numpy as np
 from numpy.random import choice as npChoice
+from make_odds_floats import convert_win_odds_to_float as convertOdds
 LOOPS = 10
 
 def importData():
@@ -15,8 +16,8 @@ def main():
     groupResults = {}
     for groupFixture in groupStageFixtures:
         elements = [groupFixture["homeTeam"], 'Draw', groupFixture["awayTeam"]] 
-        #weights = [groupFixture["homeWinOdds"], groupFixture["draw"], groupFixture["awayWinOdds"]]
-        weights = [0.1, 0.2, 0.4]
+        weights = [convertOdds(groupFixture["homeWinOdds"]), convertOdds(groupFixture["draw"]), convertOdds(groupFixture["awayWinOdds"])]
+        #weights = [0.1, 0.2, 0.4]
         totalProb = np.sum(weights)
         normalisedWeights = weights / totalProb
         result = np.random.choice(elements, p=normalisedWeights)
