@@ -1,736 +1,696 @@
 {
-    "Teams": [
-        {
-            "name": "Brazil",
-            "winning_odds": 4.0,
-            "group_points": 0,
-            "seed_value": 3,
-            "points": 0
+  "Teams": {
+    "Brazil": {
+      "winning_odds": 4.0,
+      "group_points": 0,
+      "seed_value": 3,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Germany": {
+      "winning_odds": 4.5,
+      "group_points": 0,
+      "seed_value": 3,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Spain": {
+      "winning_odds": 5.0,
+      "group_points": 0,
+      "seed_value": 4,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "France": {
+      "winning_odds": 5.5,
+      "group_points": 0,
+      "seed_value": 4,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Belgium": {
+      "winning_odds": 8.0,
+      "group_points": 0,
+      "seed_value": 5,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Argentina": {
+      "winning_odds": 10.0,
+      "group_points": 0,
+      "seed_value": 5,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "England": {
+      "winning_odds": 16.0,
+      "group_points": 0,
+      "seed_value": 8,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Portugal": {
+      "winning_odds": 17.0,
+      "group_points": 0,
+      "seed_value": 8,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Uruguay": {
+      "winning_odds": 22.0,
+      "group_points": 0,
+      "seed_value": 8,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Croatia": {
+      "winning_odds": 25.0,
+      "group_points": 0,
+      "seed_value": 10,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Russia": {
+      "winning_odds": 55.0,
+      "group_points": 0,
+      "seed_value": 12,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Colombia": {
+      "winning_odds": 55.0,
+      "group_points": 0,
+      "seed_value": 8,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Poland": {
+      "winning_odds": 60.0,
+      "group_points": 0,
+      "seed_value": 10,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Denmark": {
+      "winning_odds": 70.0,
+      "group_points": 0,
+      "seed_value": 12,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Switzerland": {
+      "winning_odds": 80.0,
+      "group_points": 0,
+      "seed_value": 10,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Serbia": {
+      "winning_odds": 80.0,
+      "group_points": 0,
+      "seed_value": 15,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Mexico": {
+      "winning_odds": 80.0,
+      "group_points": 0,
+      "seed_value": 10,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Sweden": {
+      "winning_odds": 150.0,
+      "group_points": 0,
+      "seed_value": 12,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Egypt": {
+      "winning_odds": 250.0,
+      "group_points": 0,
+      "seed_value": 15,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Australia": {
+      "winning_odds": 250.0,
+      "group_points": 0,
+      "seed_value": 22,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Senegal": {
+      "winning_odds": 475.0,
+      "group_points": 0,
+      "seed_value": 20,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Nigeria": {
+      "winning_odds": 500.0,
+      "group_points": 0,
+      "seed_value": 15,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Peru": {
+      "winning_odds": 500.0,
+      "group_points": 0,
+      "seed_value": 20,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "South Korea": {
+      "winning_odds": 500.0,
+      "group_points": 0,
+      "seed_value": 22,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Tunisia": {
+      "winning_odds": 500.0,
+      "group_points": 0,
+      "seed_value": 22,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Iceland": {
+      "winning_odds": 500.0,
+      "group_points": 0,
+      "seed_value": 15,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Iran": {
+      "winning_odds": 500.0,
+      "group_points": 0,
+      "seed_value": 20,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Costa Rica": {
+      "winning_odds": 500.0,
+      "group_points": 0,
+      "seed_value": 12,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Japan": {
+      "winning_odds": 500.0,
+      "group_points": 0,
+      "seed_value": 22,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Morocco": {
+      "winning_odds": 500.0,
+      "group_points": 0,
+      "seed_value": 20,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Panama": {
+      "winning_odds": 500.0,
+      "group_points": 0,
+      "seed_value": 25,
+      "game_points": 0,
+      "group_stage_points": 0
+    },
+    "Saudi Arabia": {
+      "winning_odds": 500.0,
+      "group_points": 0,
+      "seed_value": 25,
+      "game_points": 0,
+      "group_stage_points": 0
+    }
+  },
+  "Groups": {
+    "Group A": {
+      "teams": {
+        "Russia": {
+          "points": 0
         },
-        {
-            "name": "Germany",
-            "winning_odds": 4.5,
-            "group_points": 0,
-            "seed_value": 3,
-            "points": 0
+        "Saudi Arabia": {
+          "points": 0
         },
-        {
-            "name": "Spain",
-            "winning_odds": 5.0,
-            "group_points": 0,
-            "seed_value": 4,
-            "points": 0
+        "Egypt": {
+          "points": 0
         },
-        {
-            "name": "France",
-            "winning_odds": 5.5,
-            "group_points": 0,
-            "seed_value": 4,
-            "points": 0
-        },
-        {
-            "name": "Belgium",
-            "winning_odds": 8.0,
-            "group_points": 0,
-            "seed_value": 5,
-            "points": 0
-        },
-        {
-            "name": "Argentina",
-            "winning_odds": 10.0,
-            "group_points": 0,
-            "seed_value": 5,
-            "points": 0
-        },
-        {
-            "name": "England",
-            "winning_odds": 16.0,
-            "group_points": 0,
-            "seed_value": 8,
-            "points": 0
-        },
-        {
-            "name": "Portugal",
-            "winning_odds": 17.0,
-            "group_points": 0,
-            "seed_value": 8,
-            "points": 0
-        },
-        {
-            "name": "Uruguay",
-            "winning_odds": 22.0,
-            "group_points": 0,
-            "seed_value": 8,
-            "points": 0
-        },
-        {
-            "name": "Croatia",
-            "winning_odds": 25.0,
-            "group_points": 0,
-            "seed_value": 10,
-            "points": 0
-        },
-        {
-            "name": "Russia",
-            "winning_odds": 55.0,
-            "group_points": 0,
-            "seed_value": 12,
-            "points": 0
-        },
-        {
-            "name": "Colombia",
-            "winning_odds": 55.0,
-            "group_points": 0,
-            "seed_value": 8,
-            "points": 0
-        },
-        {
-            "name": "Poland",
-            "winning_odds": 60.0,
-            "group_points": 0,
-            "seed_value": 10,
-            "points": 0
-        },
-        {
-            "name": "Denmark",
-            "winning_odds": 70.0,
-            "group_points": 0,
-            "seed_value": 12,
-            "points": 0
-        },
-        {
-            "name": "Switzerland",
-            "winning_odds": 80.0,
-            "group_points": 0,
-            "seed_value": 10,
-            "points": 0
-        },
-        {
-            "name": "Serbia",
-            "winning_odds": 80.0,
-            "group_points": 0,
-            "seed_value": 15,
-            "points": 0
-        },
-        {
-            "name": "Mexico",
-            "winning_odds": 80.0,
-            "group_points": 0,
-            "seed_value": 10,
-            "points": 0
-        },
-        {
-            "name": "Sweden",
-            "winning_odds": 150.0,
-            "group_points": 0,
-            "seed_value": 12,
-            "points": 0
-        },
-        {
-            "name": "Egypt",
-            "winning_odds": 250.0,
-            "group_points": 0,
-            "seed_value": 15,
-            "points": 0
-        },
-        {
-            "name": "Australia",
-            "winning_odds": 250.0,
-            "group_points": 0,
-            "seed_value": 22,
-            "points": 0
-        },
-        {
-            "name": "Senegal",
-            "winning_odds": 475.0,
-            "group_points": 0,
-            "seed_value": 20,
-            "points": 0
-        },
-        {
-            "name": "Nigeria",
-            "winning_odds": 500.0,
-            "group_points": 0,
-            "seed_value": 15,
-            "points": 0
-        },
-        {
-            "name": "Peru",
-            "winning_odds": 500.0,
-            "group_points": 0,
-            "seed_value": 20,
-            "points": 0
-        },
-        {
-            "name": "South Korea",
-            "winning_odds": 500.0,
-            "group_points": 0,
-            "seed_value": 22,
-            "points": 0
-        },
-        {
-            "name": "Tunisia",
-            "winning_odds": 500.0,
-            "group_points": 0,
-            "seed_value": 22,
-            "points": 0
-        },
-        {
-            "name": "Iceland",
-            "winning_odds": 500.0,
-            "group_points": 0,
-            "seed_value": 15,
-            "points": 0
-        },
-        {
-            "name": "Iran",
-            "winning_odds": 500.0,
-            "group_points": 0,
-            "seed_value": 20,
-            "points": 0
-        },
-        {
-            "name": "Costa Rica",
-            "winning_odds": 500.0,
-            "group_points": 0,
-            "seed_value": 12,
-            "points": 0
-        },
-        {
-            "name": "Japan",
-            "winning_odds": 500.0,
-            "group_points": 0,
-            "seed_value": 22,
-            "points": 0
-        },
-        {
-            "name": "Morocco",
-            "winning_odds": 500.0,
-            "group_points": 0,
-            "seed_value": 20,
-            "points": 0
-        },
-        {
-            "name": "Panama",
-            "winning_odds": 500.0,
-            "group_points": 0,
-            "seed_value": 25,
-            "points": 0
-        },
-        {
-            "name": "Saudi Arabia",
-            "winning_odds": 500.0,
-            "group_points": 0,
-            "seed_value": 25,
-            "points": 0
+        "Uruguay": {
+          "points": 0
         }
-    ],
-    "Groups": [
-        {
-            "name": "Group A",
-            "teams": [
-                {
-                    "name": "Russia",
-                    "points": 0
-                },
-                {
-                    "name": "Saudi Arabia",
-                    "points": 0
-                },
-                {
-                    "name": "Egypt",
-                    "points": 0
-                },
-                {
-                    "name": "Uruguay",
-                    "points": 0
-                }
-            ]
+      }
+    },
+    "Group B": {
+      "teams": {
+        "Portugal": {
+          "points": 0
         },
-        {
-            "name": "Group B",
-            "teams": [
-                {
-                    "name": "Portugal",
-                    "points": 0
-                },
-                {
-                    "name": "Spain",
-                    "points": 0
-                },
-                {
-                    "name": "Morocco",
-                    "points": 0
-                },
-                {
-                    "name": "Iran",
-                    "points": 0
-                }
-            ]
+        "Spain": {
+          "points": 0
         },
-        {
-            "name": "Group C",
-            "teams": [
-                {
-                    "name": "France",
-                    "points": 0
-                },
-                {
-                    "name": "Australia",
-                    "points": 0
-                },
-                {
-                    "name": "Peru",
-                    "points": 0
-                },
-                {
-                    "name": "Denmark",
-                    "points": 0
-                }
-            ]
+        "Morocco": {
+          "points": 0
         },
-        {
-            "name": "Group D",
-            "teams": [
-                {
-                    "name": "Argentina",
-                    "points": 0
-                },
-                {
-                    "name": "Iceland",
-                    "points": 0
-                },
-                {
-                    "name": "Croatia",
-                    "points": 0
-                },
-                {
-                    "name": "Nigeria",
-                    "points": 0
-                }
-            ]
-        },
-        {
-            "name": "Group E",
-            "teams": [
-                {
-                    "name": "Brasil",
-                    "points": 0
-                },
-                {
-                    "name": "Switzerland",
-                    "points": 0
-                },
-                {
-                    "name": "Costa Rica",
-                    "points": 0
-                },
-                {
-                    "name": "Serbia",
-                    "points": 0
-                }
-            ]
-        },
-        {
-            "name": "Group F",
-            "teams": [
-                {
-                    "name": "Germany",
-                    "points": 0
-                },
-                {
-                    "name": "Mexico",
-                    "points": 0
-                },
-                {
-                    "name": "Sweden",
-                    "points": 0
-                },
-                {
-                    "name": "Korea",
-                    "points": 0
-                }
-            ]
-        },
-        {
-            "name": "Group G",
-            "teams": [
-                {
-                    "name": "Belgium",
-                    "points": 0
-                },
-                {
-                    "name": "Panama",
-                    "points": 0
-                },
-                {
-                    "name": "Tunisia",
-                    "points": 0
-                },
-                {
-                    "name": "England",
-                    "points": 0
-                }
-            ]
-        },
-        {
-            "name": "Group H",
-            "teams": [
-                {
-                    "name": "Poland",
-                    "points": 0
-                },
-                {
-                    "name": "Senegal",
-                    "points": 0
-                },
-                {
-                    "name": "Colombia",
-                    "points": 0
-                },
-                {
-                    "name": "Japan",
-                    "points": 0
-                }
-            ]
+        "Iran": {
+          "points": 0
         }
-    ],
-    "groupStageFixtures": [
-        {
-            "homeTeam": "Russia",
-            "awayTeam": "Saudi Arabia",
-            "homeWinOdds": "1/3",
-            "draw": "7/2",
-            "awayWinOdds": "10/1"
+      }
+    },
+    "Group C": {
+      "teams": {
+        "France": {
+          "points": 0
         },
-        {
-            "homeTeam": "Egypt",
-            "awayTeam": "Uruguay",
-            "homeWinOdds": "6/1",
-            "draw": "13/5",
-            "awayWinOdds": "8/15"
+        "Australia": {
+          "points": 0
         },
-        {
-            "homeTeam": "Morocco",
-            "awayTeam": "Iran",
-            "homeWinOdds": "13/10",
-            "draw": "15/8",
-            "awayWinOdds": "12/5"
+        "Peru": {
+          "points": 0
         },
-        {
-            "homeTeam": "Portugal",
-            "awayTeam": "Spain",
-            "homeWinOdds": "7/2",
-            "draw": "23/10",
-            "awayWinOdds": "5/6"
-        },
-        {
-            "homeTeam": "France",
-            "awayTeam": "Australia",
-            "homeWinOdds": "1/5",
-            "draw": "5/1",
-            "awayWinOdds": "12/1"
-        },
-        {
-            "homeTeam": "Argentina",
-            "awayTeam": "Iceland",
-            "homeWinOdds": "3/10",
-            "draw": "7/2",
-            "awayWinOdds": "10/1"
-        },
-        {
-            "homeTeam": "Peru",
-            "awayTeam": "Denmark",
-            "homeWinOdds": "23/10",
-            "draw": "21/10",
-            "awayWinOdds": "13/10"
-        },
-        {
-            "homeTeam": "Croatia",
-            "awayTeam": "Nigeria",
-            "homeWinOdds": "4/6",
-            "draw": "12/5",
-            "awayWinOdds": "4/1"
-        },
-        {
-            "homeTeam": "Costa Rica",
-            "awayTeam": "Serbia",
-            "homeWinOdds": "16/5",
-            "draw": "21/10",
-            "awayWinOdds": "10/11"
-        },
-        {
-            "homeTeam": "Germany",
-            "awayTeam": "Mexico",
-            "homeWinOdds": "2/5",
-            "draw": "16/5",
-            "awayWinOdds": "13/2"
-        },
-        {
-            "homeTeam": "Brazil",
-            "awayTeam": "Switzerland",
-            "homeWinOdds": "1/3",
-            "draw": "7/2",
-            "awayWinOdds": "8/1"
-        },
-        {
-            "homeTeam": "Sweden",
-            "awayTeam": "South Korea",
-            "homeWinOdds": "11/10",
-            "draw": "21/10",
-            "awayWinOdds": "11/4"
-        },
-        {
-            "homeTeam": "Belgium",
-            "awayTeam": "Panama",
-            "homeWinOdds": "1/7",
-            "draw": "6/1",
-            "awayWinOdds": "20/1"
-        },
-        {
-            "homeTeam": "Tunisia",
-            "awayTeam": "England",
-            "homeWinOdds": "9/1",
-            "draw": "7/2",
-            "awayWinOdds": "1/3"
-        },
-        {
-            "homeTeam": "Poland",
-            "awayTeam": "Senegal",
-            "homeWinOdds": "5/4",
-            "draw": "21/10",
-            "awayWinOdds": "23/10"
-        },
-        {
-            "homeTeam": "Colombia",
-            "awayTeam": "Japan",
-            "homeWinOdds": "4/6",
-            "draw": "5/2",
-            "awayWinOdds": "9/2"
-        },
-        {
-            "homeTeam": "Russia",
-            "awayTeam": "Egypt",
-            "homeWinOdds": "10/11",
-            "draw": "23/10",
-            "awayWinOdds": "16/5"
-        },
-        {
-            "homeTeam": "Portugal",
-            "awayTeam": "Morocco",
-            "homeWinOdds": "4/7",
-            "draw": "13/5",
-            "awayWinOdds": "5/1"
-        },
-        {
-            "homeTeam": "Uruguay",
-            "awayTeam": "Saudi Arabia",
-            "homeWinOdds": "1/5",
-            "draw": "9/2",
-            "awayWinOdds": "14/1"
-        },
-        {
-            "homeTeam": "Iran",
-            "awayTeam": "Spain",
-            "homeWinOdds": "18/1",
-            "draw": "11/2",
-            "awayWinOdds": "1/6"
-        },
-        {
-            "homeTeam": "France",
-            "awayTeam": "Peru",
-            "homeWinOdds": "4/11",
-            "draw": "10/3",
-            "awayWinOdds": "15/2"
-        },
-        {
-            "homeTeam": "Denmark",
-            "awayTeam": "Australia",
-            "homeWinOdds": "4/6",
-            "draw": "5/2",
-            "awayWinOdds": "4/1"
-        },
-        {
-            "homeTeam": "Argentina",
-            "awayTeam": "Croatia",
-            "homeWinOdds": "5/6",
-            "draw": "23/10",
-            "awayWinOdds": "10/3"
-        },
-        {
-            "homeTeam": "Brazil",
-            "awayTeam": "Costa Rica",
-            "homeWinOdds": "1/5",
-            "draw": "5/1",
-            "awayWinOdds": "13/1"
-        },
-        {
-            "homeTeam": "Nigeria",
-            "awayTeam": "Iceland",
-            "homeWinOdds": "7/4",
-            "draw": "2/1",
-            "awayWinOdds": "17/10"
-        },
-        {
-            "homeTeam": "Serbia",
-            "awayTeam": "Switzerland",
-            "homeWinOdds": "15/8",
-            "draw": "21/10",
-            "awayWinOdds": "6/4"
-        },
-        {
-            "homeTeam": "Belgium",
-            "awayTeam": "Tunisia",
-            "homeWinOdds": "1/4",
-            "draw": "4/1",
-            "awayWinOdds": "11/1"
-        },
-        {
-            "homeTeam": "Germany",
-            "awayTeam": "Sweden",
-            "homeWinOdds": "2/5",
-            "draw": "10/3",
-            "awayWinOdds": "13/2"
-        },
-        {
-            "homeTeam": "South Korea",
-            "awayTeam": "Mexico",
-            "homeWinOdds": "7/2",
-            "draw": "23/10",
-            "awayWinOdds": "5/6"
-        },
-        {
-            "homeTeam": "England",
-            "awayTeam": "Panama",
-            "homeWinOdds": "1/6",
-            "draw": "11/2",
-            "awayWinOdds": "18/1"
-        },
-        {
-            "homeTeam": "Japan",
-            "awayTeam": "Senegal",
-            "homeWinOdds": "23/10",
-            "draw": "21/10",
-            "awayWinOdds": "5/4"
-        },
-        {
-            "homeTeam": "Poland",
-            "awayTeam": "Colombia",
-            "homeWinOdds": "15/8",
-            "draw": "21/10",
-            "awayWinOdds": "6/4"
-        },
-        {
-            "homeTeam": "Saudi Arabia",
-            "awayTeam": "Egypt",
-            "homeWinOdds": "4/1",
-            "draw": "12/5",
-            "awayWinOdds": "4/6"
-        },
-        {
-            "homeTeam": "Uruguay",
-            "awayTeam": "Russia",
-            "homeWinOdds": "7/5",
-            "draw": "21/10",
-            "awayWinOdds": "2/1"
-        },
-        {
-            "homeTeam": "Iran",
-            "awayTeam": "Portugal",
-            "homeWinOdds": "17/2",
-            "draw": "7/2",
-            "awayWinOdds": "1/3"
-        },
-        {
-            "homeTeam": "Spain",
-            "awayTeam": "Morocco",
-            "homeWinOdds": "1/3",
-            "draw": "7/2",
-            "awayWinOdds": "8/1"
-        },
-        {
-            "homeTeam": "Australia",
-            "awayTeam": "Peru",
-            "homeWinOdds": "12/5",
-            "draw": "9/4",
-            "awayWinOdds": "11/10"
-        },
-        {
-            "homeTeam": "Denmark",
-            "awayTeam": "France",
-            "homeWinOdds": "9/2",
-            "draw": "13/5",
-            "awayWinOdds": "8/13"
-        },
-        {
-            "homeTeam": "Iceland",
-            "awayTeam": "Croatia",
-            "homeWinOdds": "4/1",
-            "draw": "12/5",
-            "awayWinOdds": "8/11"
-        },
-        {
-            "homeTeam": "Nigeria",
-            "awayTeam": "Argentina",
-            "homeWinOdds": "13/2",
-            "draw": "16/5",
-            "awayWinOdds": "4/9"
-        },
-        {
-            "homeTeam": "Mexico",
-            "awayTeam": "Sweden",
-            "homeWinOdds": "7/5",
-            "draw": "21/10",
-            "awayWinOdds": "15/8"
-        },
-        {
-            "homeTeam": "South Korea",
-            "awayTeam": "Germany",
-            "homeWinOdds": "10/1",
-            "draw": "4/1",
-            "awayWinOdds": "1/4"
-        },
-        {
-            "homeTeam": "Serbia",
-            "awayTeam": "Brazil",
-            "homeWinOdds": "8/1",
-            "draw": "7/2",
-            "awayWinOdds": "1/3"
-        },
-        {
-            "homeTeam": "Switzerland",
-            "awayTeam": "Costa Rica",
-            "homeWinOdds": "5/6",
-            "draw": "9/4",
-            "awayWinOdds": "10/3"
-        },
-        {
-            "homeTeam": "Japan",
-            "awayTeam": "Poland",
-            "homeWinOdds": "10/3",
-            "draw": "12/5",
-            "awayWinOdds": "5/6"
-        },
-        {
-            "homeTeam": "Senegal",
-            "awayTeam": "Colombia",
-            "homeWinOdds": "3/1",
-            "draw": "9/4",
-            "awayWinOdds": "EVS"
-        },
-        {
-            "homeTeam": "England",
-            "awayTeam": "Belgium",
-            "homeWinOdds": "15/8",
-            "draw": "23/10",
-            "awayWinOdds": "7/5"
-        },
-        {
-            "homeTeam": "Panama",
-            "awayTeam": "Tunisia",
-            "homeWinOdds": "11/5",
-            "draw": "21/10",
-            "awayWinOdds": "6/5"
+        "Denmark": {
+          "points": 0
         }
-    ]
+      }
+    },
+    "Group D": {
+      "teams": {
+        "Argentina": {
+          "points": 0
+        },
+        "Iceland": {
+          "points": 0
+        },
+        "Croatia": {
+          "points": 0
+        },
+        "Nigeria": {
+          "points": 0
+        }
+      }
+    },
+    "Group E": {
+      "teams": {
+        "Brazil": {
+          "points": 0
+        },
+        "Switzerland": {
+          "points": 0
+        },
+        "Costa Rica": {
+          "points": 0
+        },
+        "Serbia": {
+          "points": 0
+        }
+      }
+    },
+    "Group F": {
+      "teams": {
+        "Germany": {
+          "points": 0
+        },
+        "Mexico": {
+          "points": 0
+        },
+        "Sweden": {
+          "points": 0
+        },
+        "South Korea": {
+          "points": 0
+        }
+      }
+    },
+    "Group G": {
+      "teams": {
+        "Belgium": {
+          "points": 0
+        },
+        "Panama": {
+          "points": 0
+        },
+        "Tunisia": {
+          "points": 0
+        },
+        "England": {
+          "points": 0
+        }
+      }
+    },
+    "Group H": {
+      "teams": {
+        "Poland": {
+          "points": 0
+        },
+        "Senegal": {
+          "points": 0
+        },
+        "Colombia": {
+          "points": 0
+        },
+        "Japan": {
+          "points": 0
+        }
+      }
+    }
+  },
+  "groupStageFixtures": [
+    {
+      "homeTeam": "Russia",
+      "awayTeam": "Saudi Arabia",
+      "homeWinOdds": "1/3",
+      "draw": "7/2",
+      "awayWinOdds": "10/1"
+    },
+    {
+      "homeTeam": "Egypt",
+      "awayTeam": "Uruguay",
+      "homeWinOdds": "6/1",
+      "draw": "13/5",
+      "awayWinOdds": "8/15"
+    },
+    {
+      "homeTeam": "Morocco",
+      "awayTeam": "Iran",
+      "homeWinOdds": "13/10",
+      "draw": "15/8",
+      "awayWinOdds": "12/5"
+    },
+    {
+      "homeTeam": "Portugal",
+      "awayTeam": "Spain",
+      "homeWinOdds": "7/2",
+      "draw": "23/10",
+      "awayWinOdds": "5/6"
+    },
+    {
+      "homeTeam": "France",
+      "awayTeam": "Australia",
+      "homeWinOdds": "1/5",
+      "draw": "5/1",
+      "awayWinOdds": "12/1"
+    },
+    {
+      "homeTeam": "Argentina",
+      "awayTeam": "Iceland",
+      "homeWinOdds": "3/10",
+      "draw": "7/2",
+      "awayWinOdds": "10/1"
+    },
+    {
+      "homeTeam": "Peru",
+      "awayTeam": "Denmark",
+      "homeWinOdds": "23/10",
+      "draw": "21/10",
+      "awayWinOdds": "13/10"
+    },
+    {
+      "homeTeam": "Croatia",
+      "awayTeam": "Nigeria",
+      "homeWinOdds": "4/6",
+      "draw": "12/5",
+      "awayWinOdds": "4/1"
+    },
+    {
+      "homeTeam": "Costa Rica",
+      "awayTeam": "Serbia",
+      "homeWinOdds": "16/5",
+      "draw": "21/10",
+      "awayWinOdds": "10/11"
+    },
+    {
+      "homeTeam": "Germany",
+      "awayTeam": "Mexico",
+      "homeWinOdds": "2/5",
+      "draw": "16/5",
+      "awayWinOdds": "13/2"
+    },
+    {
+      "homeTeam": "Brazil",
+      "awayTeam": "Switzerland",
+      "homeWinOdds": "1/3",
+      "draw": "7/2",
+      "awayWinOdds": "8/1"
+    },
+    {
+      "homeTeam": "Sweden",
+      "awayTeam": "South Korea",
+      "homeWinOdds": "11/10",
+      "draw": "21/10",
+      "awayWinOdds": "11/4"
+    },
+    {
+      "homeTeam": "Belgium",
+      "awayTeam": "Panama",
+      "homeWinOdds": "1/7",
+      "draw": "6/1",
+      "awayWinOdds": "20/1"
+    },
+    {
+      "homeTeam": "Tunisia",
+      "awayTeam": "England",
+      "homeWinOdds": "9/1",
+      "draw": "7/2",
+      "awayWinOdds": "1/3"
+    },
+    {
+      "homeTeam": "Poland",
+      "awayTeam": "Senegal",
+      "homeWinOdds": "5/4",
+      "draw": "21/10",
+      "awayWinOdds": "23/10"
+    },
+    {
+      "homeTeam": "Colombia",
+      "awayTeam": "Japan",
+      "homeWinOdds": "4/6",
+      "draw": "5/2",
+      "awayWinOdds": "9/2"
+    },
+    {
+      "homeTeam": "Russia",
+      "awayTeam": "Egypt",
+      "homeWinOdds": "10/11",
+      "draw": "23/10",
+      "awayWinOdds": "16/5"
+    },
+    {
+      "homeTeam": "Portugal",
+      "awayTeam": "Morocco",
+      "homeWinOdds": "4/7",
+      "draw": "13/5",
+      "awayWinOdds": "5/1"
+    },
+    {
+      "homeTeam": "Uruguay",
+      "awayTeam": "Saudi Arabia",
+      "homeWinOdds": "1/5",
+      "draw": "9/2",
+      "awayWinOdds": "14/1"
+    },
+    {
+      "homeTeam": "Iran",
+      "awayTeam": "Spain",
+      "homeWinOdds": "18/1",
+      "draw": "11/2",
+      "awayWinOdds": "1/6"
+    },
+    {
+      "homeTeam": "France",
+      "awayTeam": "Peru",
+      "homeWinOdds": "4/11",
+      "draw": "10/3",
+      "awayWinOdds": "15/2"
+    },
+    {
+      "homeTeam": "Denmark",
+      "awayTeam": "Australia",
+      "homeWinOdds": "4/6",
+      "draw": "5/2",
+      "awayWinOdds": "4/1"
+    },
+    {
+      "homeTeam": "Argentina",
+      "awayTeam": "Croatia",
+      "homeWinOdds": "5/6",
+      "draw": "23/10",
+      "awayWinOdds": "10/3"
+    },
+    {
+      "homeTeam": "Brazil",
+      "awayTeam": "Costa Rica",
+      "homeWinOdds": "1/5",
+      "draw": "5/1",
+      "awayWinOdds": "13/1"
+    },
+    {
+      "homeTeam": "Nigeria",
+      "awayTeam": "Iceland",
+      "homeWinOdds": "7/4",
+      "draw": "2/1",
+      "awayWinOdds": "17/10"
+    },
+    {
+      "homeTeam": "Serbia",
+      "awayTeam": "Switzerland",
+      "homeWinOdds": "15/8",
+      "draw": "21/10",
+      "awayWinOdds": "6/4"
+    },
+    {
+      "homeTeam": "Belgium",
+      "awayTeam": "Tunisia",
+      "homeWinOdds": "1/4",
+      "draw": "4/1",
+      "awayWinOdds": "11/1"
+    },
+    {
+      "homeTeam": "Germany",
+      "awayTeam": "Sweden",
+      "homeWinOdds": "2/5",
+      "draw": "10/3",
+      "awayWinOdds": "13/2"
+    },
+    {
+      "homeTeam": "South Korea",
+      "awayTeam": "Mexico",
+      "homeWinOdds": "7/2",
+      "draw": "23/10",
+      "awayWinOdds": "5/6"
+    },
+    {
+      "homeTeam": "England",
+      "awayTeam": "Panama",
+      "homeWinOdds": "1/6",
+      "draw": "11/2",
+      "awayWinOdds": "18/1"
+    },
+    {
+      "homeTeam": "Japan",
+      "awayTeam": "Senegal",
+      "homeWinOdds": "23/10",
+      "draw": "21/10",
+      "awayWinOdds": "5/4"
+    },
+    {
+      "homeTeam": "Poland",
+      "awayTeam": "Colombia",
+      "homeWinOdds": "15/8",
+      "draw": "21/10",
+      "awayWinOdds": "6/4"
+    },
+    {
+      "homeTeam": "Saudi Arabia",
+      "awayTeam": "Egypt",
+      "homeWinOdds": "4/1",
+      "draw": "12/5",
+      "awayWinOdds": "4/6"
+    },
+    {
+      "homeTeam": "Uruguay",
+      "awayTeam": "Russia",
+      "homeWinOdds": "7/5",
+      "draw": "21/10",
+      "awayWinOdds": "2/1"
+    },
+    {
+      "homeTeam": "Iran",
+      "awayTeam": "Portugal",
+      "homeWinOdds": "17/2",
+      "draw": "7/2",
+      "awayWinOdds": "1/3"
+    },
+    {
+      "homeTeam": "Spain",
+      "awayTeam": "Morocco",
+      "homeWinOdds": "1/3",
+      "draw": "7/2",
+      "awayWinOdds": "8/1"
+    },
+    {
+      "homeTeam": "Australia",
+      "awayTeam": "Peru",
+      "homeWinOdds": "12/5",
+      "draw": "9/4",
+      "awayWinOdds": "11/10"
+    },
+    {
+      "homeTeam": "Denmark",
+      "awayTeam": "France",
+      "homeWinOdds": "9/2",
+      "draw": "13/5",
+      "awayWinOdds": "8/13"
+    },
+    {
+      "homeTeam": "Iceland",
+      "awayTeam": "Croatia",
+      "homeWinOdds": "4/1",
+      "draw": "12/5",
+      "awayWinOdds": "8/11"
+    },
+    {
+      "homeTeam": "Nigeria",
+      "awayTeam": "Argentina",
+      "homeWinOdds": "13/2",
+      "draw": "16/5",
+      "awayWinOdds": "4/9"
+    },
+    {
+      "homeTeam": "Mexico",
+      "awayTeam": "Sweden",
+      "homeWinOdds": "7/5",
+      "draw": "21/10",
+      "awayWinOdds": "15/8"
+    },
+    {
+      "homeTeam": "South Korea",
+      "awayTeam": "Germany",
+      "homeWinOdds": "10/1",
+      "draw": "4/1",
+      "awayWinOdds": "1/4"
+    },
+    {
+      "homeTeam": "Serbia",
+      "awayTeam": "Brazil",
+      "homeWinOdds": "8/1",
+      "draw": "7/2",
+      "awayWinOdds": "1/3"
+    },
+    {
+      "homeTeam": "Switzerland",
+      "awayTeam": "Costa Rica",
+      "homeWinOdds": "5/6",
+      "draw": "9/4",
+      "awayWinOdds": "10/3"
+    },
+    {
+      "homeTeam": "Japan",
+      "awayTeam": "Poland",
+      "homeWinOdds": "10/3",
+      "draw": "12/5",
+      "awayWinOdds": "5/6"
+    },
+    {
+      "homeTeam": "Senegal",
+      "awayTeam": "Colombia",
+      "homeWinOdds": "3/1",
+      "draw": "9/4",
+      "awayWinOdds": "EVS"
+    },
+    {
+      "homeTeam": "England",
+      "awayTeam": "Belgium",
+      "homeWinOdds": "15/8",
+      "draw": "23/10",
+      "awayWinOdds": "7/5"
+    },
+    {
+      "homeTeam": "Panama",
+      "awayTeam": "Tunisia",
+      "homeWinOdds": "11/5",
+      "draw": "21/10",
+      "awayWinOdds": "6/5"
+    }
+  ]
 }
