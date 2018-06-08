@@ -181,6 +181,21 @@ def playFinal(teams, fixture):
     giveTeamGamePoints(teams, tournamentWinner, GAME_POINTS['FINAL_WIN'])
     return tournamentWinner
 
+def calculateThirdPlacePlayoff(teams, semiFinalTeams, finalTeams):
+    thirdPlacePlayoffTeams = np.setdiff1d(semiFinalTeams,finalTeams)
+    return [{
+        "homeTeam": thirdPlacePlayoffTeams[0],
+        "awayTeam": thirdPlacePlayoffTeams[1],
+        "homeWinOdds": teams[thirdPlacePlayoffTeams[0]]['winning_odds'],
+        "drawOdds": "0",
+        "awayWinOdds": teams[thirdPlacePlayoffTeams[1]]['winning_odds']
+    }]
+
+def playThirdPlacePlayoff(teams, fixture):
+    thirdPlaceWinner = play_match(fixture["homeTeam"], fixture["awayTeam"], fixture["homeWinOdds"], fixture["drawOdds"], fixture["awayWinOdds"])
+    giveTeamGamePoints(teams, thirdPlaceWinner, GAME_POINTS['THIRD_PLACE_PLAYOFF_WIN'])
+    return thirdPlaceWinner
+
 def printGamePoints(teams):
     for team in teams:
         print("{}: {} points.".format(team, teams[team]['game_points']))
@@ -198,24 +213,36 @@ def runGame(teams, groups, groupStageFixtures, doLogs):
     if doLogs:
         printKnockOutRoundOfFixtures(quarterFinalFixtures, "Quarter Final Fixtures")
     semiFinalFixtures = playKnockOutRound(teams, quarterFinalFixtures, GAME_POINTS['QUARTER_FINAL_WIN'])
+    semiFinalTeams = [semiFinalFixtures[0]["homeTeam"],semiFinalFixtures[0]["awayTeam"],semiFinalFixtures[1]["homeTeam"],semiFinalFixtures[1]["awayTeam"]]
     if doLogs:
         printKnockOutRoundOfFixtures(semiFinalFixtures, "Semi Final Fixtures")
     finalFixture = playKnockOutRound(teams, semiFinalFixtures, GAME_POINTS['SEMI_FINAL_WIN'])
+    finalTeams = [finalFixture[0]["homeTeam"],finalFixture[0]["awayTeam"]]
+    thirdPlaceFixture = calculateThirdPlacePlayoff(teams, semiFinalTeams, finalTeams)
     if doLogs:
-        printKnockOutRoundOfFixtures(finalFixture, "Final Fixtures")
+        printKnockOutRoundOfFixtures(finalFixture, "Final Fixture")
+        printKnockOutRoundOfFixtures(thirdPlaceFixture, "Third Place Fixture")
     tournamentWinner = playFinal(teams, finalFixture[0])
+    thirdPlaceWinner = playThirdPlacePlayoff(teams, thirdPlaceFixture[0])
     if doLogs:
+        print("{} has finished Third!".format(thirdPlaceWinner))
         print("{} has won the tournament!".format(tournamentWinner))
     if doLogs:
         printGamePoints(teams)
+
+def printResultsToFile(teams, loopsDone):
+    orderedResults = {k: v['game_points'] / loopsDone for k,v in teams.items()}
+    orderedResults = sorted(orderedResults.items(), key=operator.itemgetter(1))
+    with open("results/" + str(loopsDone) + " with {} loops.json".format(loopsDone), 'w') as new_json_file:
+        json.dump(orderedResults, new_json_file, indent=4, ensure_ascii=False)
 
 def main():
     teams, groups, groupStageFixtures = import_data()
     for i in range(GAME_LOOPS):
         runGame(teams, groups, groupStageFixtures, False)
-    orderedResults = {k: v['game_points'] / GAME_LOOPS for k,v in teams.items()}
-    orderedResults = sorted(orderedResults.items(), key=operator.itemgetter(1))
-    pprint(orderedResults)
+        if i % (GAME_LOOPS / 10) == 0 and i is not 0:
+            printResultsToFile(teams, i)
+    printResultsToFile(teams, GAME_LOOPS)
 
 
 
