@@ -2,7 +2,6 @@ import json
 from pprint import pprint
 import numpy as np
 from numpy.random import choice as npChoice
-from make_odds_floats import convert_win_odds_to_probability as convert_to_probability
 import operator
 
 GAME_LOOPS = 1000
@@ -21,12 +20,21 @@ def import_data():
         data = json.load(f)
         return data["Teams"], data["Groups"], data["groupStageFixtures"]
 
+def convert_win_odds_to_probability(odds_string):
+    if odds_string == "EVS":
+        return 0.5
+    elif odds_string == "0":
+        return 0
+    else:
+        nums = odds_string.split("/")
+        return round(float(nums[1]) / (float(nums[1]) + float(nums[0])), 4)
+
 def giveTeamGamePoints(teams, team, points):
     teams[team]['game_points'] = teams[team]['game_points'] + (points * teams[team]['seed_value'])
 
 def play_match(homeTeam, awayTeam, homeTeamOdds, drawOdds, awayTeamOdds):
     elements = [homeTeam, 'Draw', awayTeam]
-    weights = [convert_to_probability(homeTeamOdds), convert_to_probability(drawOdds), convert_to_probability(awayTeamOdds)]
+    weights = [convert_win_odds_to_probability(homeTeamOdds), convert_win_odds_to_probability(drawOdds), convert_win_odds_to_probability(awayTeamOdds)]
     total_prob = np.sum(weights)
     normalised_weights = weights / total_prob
     return np.random.choice(elements, p=normalised_weights)
