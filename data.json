@@ -1,224 +1,224 @@
 {
   "Teams": {
     "Brazil": {
-      "winning_odds": 4.0,
+      "winning_odds": "4/1",
       "group_points": 0,
       "seed_value": 3,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Germany": {
-      "winning_odds": 4.5,
+      "winning_odds": "9/2",
       "group_points": 0,
       "seed_value": 3,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Spain": {
-      "winning_odds": 5.0,
+      "winning_odds": "5/1",
       "group_points": 0,
       "seed_value": 4,
       "game_points": 0,
       "group_stage_points": 0
     },
     "France": {
-      "winning_odds": 5.5,
+      "winning_odds": "11/2",
       "group_points": 0,
       "seed_value": 4,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Belgium": {
-      "winning_odds": 8.0,
+      "winning_odds": "8/1",
       "group_points": 0,
       "seed_value": 5,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Argentina": {
-      "winning_odds": 10.0,
+      "winning_odds": "10/1",
       "group_points": 0,
       "seed_value": 5,
       "game_points": 0,
       "group_stage_points": 0
     },
     "England": {
-      "winning_odds": 16.0,
+      "winning_odds": "16/1",
       "group_points": 0,
       "seed_value": 8,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Portugal": {
-      "winning_odds": 17.0,
+      "winning_odds": "17/1",
       "group_points": 0,
       "seed_value": 8,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Uruguay": {
-      "winning_odds": 22.0,
+      "winning_odds": "22/1",
       "group_points": 0,
       "seed_value": 8,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Croatia": {
-      "winning_odds": 25.0,
+      "winning_odds": "25/1",
       "group_points": 0,
       "seed_value": 10,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Russia": {
-      "winning_odds": 55.0,
+      "winning_odds": "55/1",
       "group_points": 0,
       "seed_value": 12,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Colombia": {
-      "winning_odds": 55.0,
+      "winning_odds": "55/1",
       "group_points": 0,
       "seed_value": 8,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Poland": {
-      "winning_odds": 60.0,
+      "winning_odds": "60/1",
       "group_points": 0,
       "seed_value": 10,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Denmark": {
-      "winning_odds": 70.0,
+      "winning_odds": "70/1",
       "group_points": 0,
       "seed_value": 12,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Switzerland": {
-      "winning_odds": 80.0,
+      "winning_odds": "80/1",
       "group_points": 0,
       "seed_value": 10,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Serbia": {
-      "winning_odds": 80.0,
+      "winning_odds": "80/1",
       "group_points": 0,
       "seed_value": 15,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Mexico": {
-      "winning_odds": 80.0,
+      "winning_odds": "80/1",
       "group_points": 0,
       "seed_value": 10,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Sweden": {
-      "winning_odds": 150.0,
+      "winning_odds": "150/1",
       "group_points": 0,
       "seed_value": 12,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Egypt": {
-      "winning_odds": 250.0,
+      "winning_odds": "250/1",
       "group_points": 0,
       "seed_value": 15,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Australia": {
-      "winning_odds": 250.0,
+      "winning_odds": "250/1",
       "group_points": 0,
       "seed_value": 22,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Senegal": {
-      "winning_odds": 475.0,
+      "winning_odds": "475/1",
       "group_points": 0,
       "seed_value": 20,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Nigeria": {
-      "winning_odds": 500.0,
+      "winning_odds": "500/1",
       "group_points": 0,
       "seed_value": 15,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Peru": {
-      "winning_odds": 500.0,
+      "winning_odds": "500/1",
       "group_points": 0,
       "seed_value": 20,
       "game_points": 0,
       "group_stage_points": 0
     },
     "South Korea": {
-      "winning_odds": 500.0,
+      "winning_odds": "500/1",
       "group_points": 0,
       "seed_value": 22,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Tunisia": {
-      "winning_odds": 500.0,
+      "winning_odds": "500/1",
       "group_points": 0,
       "seed_value": 22,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Iceland": {
-      "winning_odds": 500.0,
+      "winning_odds": "500/1",
       "group_points": 0,
       "seed_value": 15,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Iran": {
-      "winning_odds": 500.0,
+      "winning_odds": "500/1",
       "group_points": 0,
       "seed_value": 20,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Costa Rica": {
-      "winning_odds": 500.0,
+      "winning_odds": "500/1",
       "group_points": 0,
       "seed_value": 12,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Japan": {
-      "winning_odds": 500.0,
+      "winning_odds": "500/1",
       "group_points": 0,
       "seed_value": 22,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Morocco": {
-      "winning_odds": 500.0,
+      "winning_odds": "500/1",
       "group_points": 0,
       "seed_value": 20,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Panama": {
-      "winning_odds": 500.0,
+      "winning_odds": "500/1",
       "group_points": 0,
       "seed_value": 25,
       "game_points": 0,
       "group_stage_points": 0
     },
     "Saudi Arabia": {
-      "winning_odds": 500.0,
+      "winning_odds": "500/1",
       "group_points": 0,
       "seed_value": 25,
       "game_points": 0,
@@ -227,6 +227,8 @@
   },
   "Groups": {
     "Group A": {
+      "winner": "",
+      "second": "",
       "teams": {
         "Russia": {
           "points": 0
@@ -243,6 +245,8 @@
       }
     },
     "Group B": {
+      "winner": "",
+      "second": "",
       "teams": {
         "Portugal": {
           "points": 0
@@ -259,6 +263,8 @@
       }
     },
     "Group C": {
+      "winner": "",
+      "second": "",
       "teams": {
         "France": {
           "points": 0
@@ -275,6 +281,8 @@
       }
     },
     "Group D": {
+      "winner": "",
+      "second": "",
       "teams": {
         "Argentina": {
           "points": 0
@@ -291,6 +299,8 @@
       }
     },
     "Group E": {
+      "winner": "",
+      "second": "",
       "teams": {
         "Brazil": {
           "points": 0
@@ -307,6 +317,8 @@
       }
     },
     "Group F": {
+      "winner": "",
+      "second": "",
       "teams": {
         "Germany": {
           "points": 0
@@ -323,6 +335,8 @@
       }
     },
     "Group G": {
+      "winner": "",
+      "second": "",
       "teams": {
         "Belgium": {
           "points": 0
@@ -339,6 +353,8 @@
       }
     },
     "Group H": {
+      "winner": "",
+      "second": "",
       "teams": {
         "Poland": {
           "points": 0
