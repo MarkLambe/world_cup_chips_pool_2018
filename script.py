@@ -47,7 +47,12 @@ def play_match(homeTeam, awayTeam, homeWinOdds, draw, awayWinOdds):
 def run_group_stage(group_stage_fixtures):
     group_results = []
     for group_fixture in group_stage_fixtures:
+<<<<<<< HEAD
         result = play_match(**group_fixture)
+=======
+        result = play_match(group_fixture["homeTeam"], group_fixture["awayTeam"], group_fixture["homeWinOdds"],
+                            group_fixture["draw"], group_fixture["awayWinOdds"])
+>>>>>>> Basic cleanup. Still imports that are used and objects passed to functions that aren't used
         group_results.append({"homeTeam": group_fixture["homeTeam"], "awayTeam": group_fixture["awayTeam"],
                               "result": result})
     return group_results
@@ -156,7 +161,11 @@ def printKnockOutRoundOfFixtures(fixtures, roundName):
     print("\n\n{}:".format(roundName))
     for fixture in fixtures:
         print("\n{} plays {} with odds of {} : {} : {}".format(fixture['homeTeam'], fixture['awayTeam'],
+<<<<<<< HEAD
                                                                fixture['homeWinOdds'], fixture['draw'], fixture['awayWinOdds']))
+=======
+                                                               fixture['homeWinOdds'], fixture['drawOdds'], fixture['awayWinOdds']))
+>>>>>>> Basic cleanup. Still imports that are used and objects passed to functions that aren't used
 
 
 def pairwise(iterables):
@@ -168,8 +177,15 @@ def playKnockOutRound(teams, fixtures, roundMultiplier):
     pairs = pairwise(fixtures)
     nextRound = []
     for firstFixture, secondFixture in pairs:
+<<<<<<< HEAD
         result1 = play_match(**firstFixture)
         result2 = play_match(**secondFixture)
+=======
+        result1 = play_match(firstFixture["homeTeam"], firstFixture["awayTeam"], firstFixture["homeWinOdds"],
+                             firstFixture["drawOdds"], firstFixture["awayWinOdds"])
+        result2 = play_match(secondFixture["homeTeam"], secondFixture["awayTeam"], secondFixture["homeWinOdds"],
+                             secondFixture["drawOdds"], secondFixture["awayWinOdds"])
+>>>>>>> Basic cleanup. Still imports that are used and objects passed to functions that aren't used
         giveTeamGamePoints(teams, result1, roundMultiplier)
         giveTeamGamePoints(teams, result2, roundMultiplier)
         nextRound.append({
@@ -183,7 +199,12 @@ def playKnockOutRound(teams, fixtures, roundMultiplier):
 
 
 def playFinal(teams, fixture):
+<<<<<<< HEAD
     tournamentWinner = play_match(**fixture)
+=======
+    tournamentWinner = play_match(fixture["homeTeam"], fixture["awayTeam"], fixture["homeWinOdds"],
+                                  fixture["drawOdds"], fixture["awayWinOdds"])
+>>>>>>> Basic cleanup. Still imports that are used and objects passed to functions that aren't used
     giveTeamGamePoints(teams, tournamentWinner, GAME_POINTS['FINAL_WIN'])
     return tournamentWinner
 
@@ -200,7 +221,12 @@ def calculateThirdPlacePlayoff(teams, semiFinalTeams, finalTeams):
 
 
 def playThirdPlacePlayoff(teams, fixture):
+<<<<<<< HEAD
     thirdPlaceWinner = play_match(**fixture)
+=======
+    thirdPlaceWinner = play_match(fixture["homeTeam"], fixture["awayTeam"], fixture["homeWinOdds"],
+                                  fixture["drawOdds"], fixture["awayWinOdds"])
+>>>>>>> Basic cleanup. Still imports that are used and objects passed to functions that aren't used
     giveTeamGamePoints(teams, thirdPlaceWinner, GAME_POINTS['THIRD_PLACE_PLAYOFF_WIN'])
     return thirdPlaceWinner
 
