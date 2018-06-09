@@ -53,3 +53,6 @@ Which led me to placing the following entry.
 | Uruguay  | 50.273464  |     1     |
 
 The script will output intermediate results every 10% of the way to completion.
+
+Known Issues:
+It doesn't fall back to head to head if two teams draw in the group stage, it just picks one.
