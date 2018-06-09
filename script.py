@@ -47,7 +47,8 @@ def play_match(homeTeam, awayTeam, homeTeamOdds, drawOdds, awayTeamOdds):
 def run_group_stage(group_stage_fixtures):
     group_results = []
     for group_fixture in group_stage_fixtures:
-        result = play_match(group_fixture["homeTeam"], group_fixture["awayTeam"], group_fixture["homeWinOdds"], group_fixture["draw"], group_fixture["awayWinOdds"])
+        result = play_match(group_fixture["homeTeam"], group_fixture["awayTeam"], group_fixture["homeWinOdds"],
+                            group_fixture["draw"], group_fixture["awayWinOdds"])
         group_results.append({"homeTeam": group_fixture["homeTeam"], "awayTeam": group_fixture["awayTeam"],
                               "result": result})
     return group_results
@@ -56,14 +57,14 @@ def run_group_stage(group_stage_fixtures):
 def score_group_stage(teams, groups, group_results):
     for result in group_results:
         if result['result'] == 'Draw':
-            teams[result['homeTeam']]['group_stage_points'] = teams[result['homeTeam']]['group_stage_points'] + 1
-            teams[result['awayTeam']]['group_stage_points'] = teams[result['awayTeam']]['group_stage_points'] + 1
+            teams[result['homeTeam']]['group_stage_points'] += 1
+            teams[result['awayTeam']]['group_stage_points'] += 1
 
             giveTeamGamePoints(teams, result['homeTeam'], GAME_POINTS['GROUP_STAGE_DRAW'])
             giveTeamGamePoints(teams, result['awayTeam'], GAME_POINTS['GROUP_STAGE_DRAW'])
         else:
             giveTeamGamePoints(teams, result['result'], GAME_POINTS['GROUP_STAGE_WIN'])
-            teams[result['result']]['group_stage_points'] = teams[result['result']]['group_stage_points'] + 3
+            teams[result['result']]['group_stage_points'] += 3
 
 
 def calculateGroupStageWinners(teams, groups, groupStageFixtures):
@@ -155,7 +156,8 @@ def calculateRoundOfSixteenFixtures(teams, groups):
 def printKnockOutRoundOfFixtures(fixtures, roundName):
     print("\n\n{}:".format(roundName))
     for fixture in fixtures:
-        print("\n{} plays {} with odds of {} : {} : {}".format(fixture['homeTeam'], fixture['awayTeam'], fixture['homeWinOdds'], fixture['drawOdds'], fixture['awayWinOdds']))
+        print("\n{} plays {} with odds of {} : {} : {}".format(fixture['homeTeam'], fixture['awayTeam'],
+                                                               fixture['homeWinOdds'], fixture['drawOdds'], fixture['awayWinOdds']))
 
 
 def pairwise(iterables):
@@ -167,8 +169,10 @@ def playKnockOutRound(teams, fixtures, roundMultiplier):
     pairs = pairwise(fixtures)
     nextRound = []
     for firstFixture, secondFixture in pairs:
-        result1 = play_match(firstFixture["homeTeam"], firstFixture["awayTeam"], firstFixture["homeWinOdds"], firstFixture["drawOdds"], firstFixture["awayWinOdds"])
-        result2 = play_match(secondFixture["homeTeam"], secondFixture["awayTeam"], secondFixture["homeWinOdds"], secondFixture["drawOdds"], secondFixture["awayWinOdds"])
+        result1 = play_match(firstFixture["homeTeam"], firstFixture["awayTeam"], firstFixture["homeWinOdds"],
+                             firstFixture["drawOdds"], firstFixture["awayWinOdds"])
+        result2 = play_match(secondFixture["homeTeam"], secondFixture["awayTeam"], secondFixture["homeWinOdds"],
+                             secondFixture["drawOdds"], secondFixture["awayWinOdds"])
         giveTeamGamePoints(teams, result1, roundMultiplier)
         giveTeamGamePoints(teams, result2, roundMultiplier)
         nextRound.append({
@@ -182,7 +186,8 @@ def playKnockOutRound(teams, fixtures, roundMultiplier):
 
 
 def playFinal(teams, fixture):
-    tournamentWinner = play_match(fixture["homeTeam"], fixture["awayTeam"], fixture["homeWinOdds"], fixture["drawOdds"], fixture["awayWinOdds"])
+    tournamentWinner = play_match(fixture["homeTeam"], fixture["awayTeam"], fixture["homeWinOdds"],
+                                  fixture["drawOdds"], fixture["awayWinOdds"])
     giveTeamGamePoints(teams, tournamentWinner, GAME_POINTS['FINAL_WIN'])
     return tournamentWinner
 
@@ -199,7 +204,8 @@ def calculateThirdPlacePlayoff(teams, semiFinalTeams, finalTeams):
 
 
 def playThirdPlacePlayoff(teams, fixture):
-    thirdPlaceWinner = play_match(fixture["homeTeam"], fixture["awayTeam"], fixture["homeWinOdds"], fixture["drawOdds"], fixture["awayWinOdds"])
+    thirdPlaceWinner = play_match(fixture["homeTeam"], fixture["awayTeam"], fixture["homeWinOdds"],
+                                  fixture["drawOdds"], fixture["awayWinOdds"])
     giveTeamGamePoints(teams, thirdPlaceWinner, GAME_POINTS['THIRD_PLACE_PLAYOFF_WIN'])
     return thirdPlaceWinner
 
@@ -222,11 +228,12 @@ def runGame(teams, groups, groupStageFixtures, doLogs):
     if doLogs:
         printKnockOutRoundOfFixtures(quarterFinalFixtures, "Quarter Final Fixtures")
     semiFinalFixtures = playKnockOutRound(teams, quarterFinalFixtures, GAME_POINTS['QUARTER_FINAL_WIN'])
-    semiFinalTeams = [semiFinalFixtures[0]["homeTeam"],semiFinalFixtures[0]["awayTeam"],semiFinalFixtures[1]["homeTeam"],semiFinalFixtures[1]["awayTeam"]]
+    semiFinalTeams = [semiFinalFixtures[0]["homeTeam"], semiFinalFixtures[0]["awayTeam"],
+                      semiFinalFixtures[1]["homeTeam"], semiFinalFixtures[1]["awayTeam"]]
     if doLogs:
         printKnockOutRoundOfFixtures(semiFinalFixtures, "Semi Final Fixtures")
     finalFixture = playKnockOutRound(teams, semiFinalFixtures, GAME_POINTS['SEMI_FINAL_WIN'])
-    finalTeams = [finalFixture[0]["homeTeam"],finalFixture[0]["awayTeam"]]
+    finalTeams = [finalFixture[0]["homeTeam"], finalFixture[0]["awayTeam"]]
     thirdPlaceFixture = calculateThirdPlacePlayoff(teams, semiFinalTeams, finalTeams)
     if doLogs:
         printKnockOutRoundOfFixtures(finalFixture, "Final Fixture")
