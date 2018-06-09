@@ -15,10 +15,12 @@ GAME_POINTS = {
         'FINAL_WIN': 6,
     }
 
+
 def import_data():
     with open('data.json', 'r') as f:
         data = json.load(f)
         return data["Teams"], data["Groups"], data["groupStageFixtures"]
+
 
 def convert_win_odds_to_probability(odds_string):
     if odds_string == "EVS":
@@ -29,8 +31,10 @@ def convert_win_odds_to_probability(odds_string):
         nums = odds_string.split("/")
         return round(float(nums[1]) / (float(nums[1]) + float(nums[0])), 4)
 
+
 def giveTeamGamePoints(teams, team, points):
     teams[team]['game_points'] = teams[team]['game_points'] + (points * teams[team]['seed_value'])
+
 
 def play_match(homeTeam, awayTeam, homeTeamOdds, drawOdds, awayTeamOdds):
     elements = [homeTeam, 'Draw', awayTeam]
@@ -176,10 +180,12 @@ def playKnockOutRound(teams, fixtures, roundMultiplier):
         })
     return nextRound
 
+
 def playFinal(teams, fixture):
     tournamentWinner = play_match(fixture["homeTeam"], fixture["awayTeam"], fixture["homeWinOdds"], fixture["drawOdds"], fixture["awayWinOdds"])
     giveTeamGamePoints(teams, tournamentWinner, GAME_POINTS['FINAL_WIN'])
     return tournamentWinner
+
 
 def calculateThirdPlacePlayoff(teams, semiFinalTeams, finalTeams):
     thirdPlacePlayoffTeams = np.setdiff1d(semiFinalTeams,finalTeams)
@@ -191,14 +197,17 @@ def calculateThirdPlacePlayoff(teams, semiFinalTeams, finalTeams):
         "awayWinOdds": teams[thirdPlacePlayoffTeams[1]]['winning_odds']
     }]
 
+
 def playThirdPlacePlayoff(teams, fixture):
     thirdPlaceWinner = play_match(fixture["homeTeam"], fixture["awayTeam"], fixture["homeWinOdds"], fixture["drawOdds"], fixture["awayWinOdds"])
     giveTeamGamePoints(teams, thirdPlaceWinner, GAME_POINTS['THIRD_PLACE_PLAYOFF_WIN'])
     return thirdPlaceWinner
 
+
 def printGamePoints(teams):
     for team in teams:
         print("{}: {} points.".format(team, teams[team]['game_points']))
+
 
 def runGame(teams, groups, groupStageFixtures, doLogs):
     group_results = run_group_stage(groupStageFixtures)
@@ -230,11 +239,13 @@ def runGame(teams, groups, groupStageFixtures, doLogs):
     if doLogs:
         printGamePoints(teams)
 
+
 def printResultsToFile(teams, loopsDone):
     orderedResults = {k: v['game_points'] / loopsDone for k,v in teams.items()}
     orderedResults = sorted(orderedResults.items(), key=operator.itemgetter(1))
     with open("results/" + str(loopsDone) + " with {} loops.json".format(loopsDone), 'w') as new_json_file:
         json.dump(orderedResults, new_json_file, indent=4, ensure_ascii=False)
+
 
 def main():
     teams, groups, groupStageFixtures = import_data()
@@ -243,7 +254,6 @@ def main():
         if i % (GAME_LOOPS / 10) == 0 and i is not 0:
             printResultsToFile(teams, i)
     printResultsToFile(teams, GAME_LOOPS)
-
 
 
 if __name__ == "__main__":
