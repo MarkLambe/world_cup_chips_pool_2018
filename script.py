@@ -4,7 +4,7 @@ import numpy as np
 from numpy.random import choice as npChoice
 import operator
 
-GAME_LOOPS = 1000
+GAME_LOOPS = 5000000
 GAME_POINTS = {
         'GROUP_STAGE_DRAW': 1,
         'GROUP_STAGE_WIN': 2,
