@@ -155,8 +155,8 @@ def calculateRoundOfSixteenFixtures(teams, groups):
 def printKnockOutRoundOfFixtures(fixtures, roundName):
     print("\n\n{}:".format(roundName))
     for fixture in fixtures:
-        print("\n{} plays {} with odds of {} : {} : {}".format(fixture['homeTeam'], fixture['awayTeam'],
-                                                               fixture['homeWinOdds'], fixture['draw'], fixture['awayWinOdds']))
+        print("\n{} plays {} with odds of {} : {} : {}".format(
+            fixture['homeTeam'], fixture['awayTeam'], fixture['homeWinOdds'], fixture['draw'], fixture['awayWinOdds']))
 
 
 def pairwise(iterables):
