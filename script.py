@@ -36,9 +36,9 @@ def giveTeamGamePoints(teams, team, points):
     teams[team]['game_points'] = teams[team]['game_points'] + (points * teams[team]['seed_value'])
 
 
-def play_match(homeTeam, awayTeam, homeTeamOdds, drawOdds, awayTeamOdds):
+def play_match(homeTeam, awayTeam, homeWinOdds, draw, awayWinOdds):
     elements = [homeTeam, 'Draw', awayTeam]
-    weights = [convert_win_odds_to_probability(homeTeamOdds), convert_win_odds_to_probability(drawOdds), convert_win_odds_to_probability(awayTeamOdds)]
+    weights = [convert_win_odds_to_probability(homeWinOdds), convert_win_odds_to_probability(draw), convert_win_odds_to_probability(awayWinOdds)]
     total_prob = np.sum(weights)
     normalised_weights = weights / total_prob
     return np.random.choice(elements, p=normalised_weights)
@@ -47,8 +47,7 @@ def play_match(homeTeam, awayTeam, homeTeamOdds, drawOdds, awayTeamOdds):
 def run_group_stage(group_stage_fixtures):
     group_results = []
     for group_fixture in group_stage_fixtures:
-        result = play_match(group_fixture["homeTeam"], group_fixture["awayTeam"], group_fixture["homeWinOdds"],
-                            group_fixture["draw"], group_fixture["awayWinOdds"])
+        result = play_match(**group_fixture)
         group_results.append({"homeTeam": group_fixture["homeTeam"], "awayTeam": group_fixture["awayTeam"],
                               "result": result})
     return group_results
@@ -98,56 +97,56 @@ def calculateRoundOfSixteenFixtures(teams, groups):
           "homeTeam": groups['Group A']['winner'],
           "awayTeam": groups['Group B']['second'],
           "homeWinOdds": teams[groups['Group A']['winner']]['winning_odds'],
-          "drawOdds": "0",
+          "draw": "0",
           "awayWinOdds": teams[groups['Group B']['second']]['winning_odds']
         },
         {
           "homeTeam": groups['Group C']['winner'],
           "awayTeam": groups['Group D']['second'],
           "homeWinOdds": teams[groups['Group C']['winner']]['winning_odds'],
-          "drawOdds": "0",
+          "draw": "0",
           "awayWinOdds": teams[groups['Group D']['second']]['winning_odds']
         },
         {
           "homeTeam": groups['Group E']['winner'],
           "awayTeam": groups['Group F']['second'],
           "homeWinOdds": teams[groups['Group E']['winner']]['winning_odds'],
-          "drawOdds": "0",
+          "draw": "0",
           "awayWinOdds": teams[groups['Group F']['second']]['winning_odds']
         },
         {
           "homeTeam": groups['Group G']['winner'],
           "awayTeam": groups['Group H']['second'],
           "homeWinOdds": teams[groups['Group G']['winner']]['winning_odds'],
-          "drawOdds": "0",
+          "draw": "0",
           "awayWinOdds": teams[groups['Group H']['second']]['winning_odds']
         },
         {
           "homeTeam": groups['Group B']['winner'],
           "awayTeam": groups['Group A']['second'],
           "homeWinOdds": teams[groups['Group B']['winner']]['winning_odds'],
-          "drawOdds": "0",
+          "draw": "0",
           "awayWinOdds": teams[groups['Group A']['second']]['winning_odds']
         },
         {
           "homeTeam": groups['Group D']['winner'],
           "awayTeam": groups['Group C']['second'],
           "homeWinOdds": teams[groups['Group D']['winner']]['winning_odds'],
-          "drawOdds": "0",
+          "draw": "0",
           "awayWinOdds": teams[groups['Group C']['second']]['winning_odds']
         },
         {
           "homeTeam": groups['Group F']['winner'],
           "awayTeam": groups['Group E']['second'],
           "homeWinOdds": teams[groups['Group F']['winner']]['winning_odds'],
-          "drawOdds": "0",
+          "draw": "0",
           "awayWinOdds": teams[groups['Group E']['second']]['winning_odds']
         },
         {
           "homeTeam": groups['Group H']['winner'],
           "awayTeam": groups['Group G']['second'],
           "homeWinOdds": teams[groups['Group H']['winner']]['winning_odds'],
-          "drawOdds": "0",
+          "draw": "0",
           "awayWinOdds": teams[groups['Group G']['second']]['winning_odds']
         }
     ]
@@ -157,7 +156,7 @@ def printKnockOutRoundOfFixtures(fixtures, roundName):
     print("\n\n{}:".format(roundName))
     for fixture in fixtures:
         print("\n{} plays {} with odds of {} : {} : {}".format(fixture['homeTeam'], fixture['awayTeam'],
-                                                               fixture['homeWinOdds'], fixture['drawOdds'], fixture['awayWinOdds']))
+                                                               fixture['homeWinOdds'], fixture['draw'], fixture['awayWinOdds']))
 
 
 def pairwise(iterables):
@@ -169,25 +168,22 @@ def playKnockOutRound(teams, fixtures, roundMultiplier):
     pairs = pairwise(fixtures)
     nextRound = []
     for firstFixture, secondFixture in pairs:
-        result1 = play_match(firstFixture["homeTeam"], firstFixture["awayTeam"], firstFixture["homeWinOdds"],
-                             firstFixture["drawOdds"], firstFixture["awayWinOdds"])
-        result2 = play_match(secondFixture["homeTeam"], secondFixture["awayTeam"], secondFixture["homeWinOdds"],
-                             secondFixture["drawOdds"], secondFixture["awayWinOdds"])
+        result1 = play_match(**firstFixture)
+        result2 = play_match(**secondFixture)
         giveTeamGamePoints(teams, result1, roundMultiplier)
         giveTeamGamePoints(teams, result2, roundMultiplier)
         nextRound.append({
           "homeTeam": result1,
           "awayTeam": result2,
           "homeWinOdds": teams[result1]['winning_odds'],
-          "drawOdds": "0",
+          "draw": "0",
           "awayWinOdds": teams[result2]['winning_odds']
         })
     return nextRound
 
 
 def playFinal(teams, fixture):
-    tournamentWinner = play_match(fixture["homeTeam"], fixture["awayTeam"], fixture["homeWinOdds"],
-                                  fixture["drawOdds"], fixture["awayWinOdds"])
+    tournamentWinner = play_match(**fixture)
     giveTeamGamePoints(teams, tournamentWinner, GAME_POINTS['FINAL_WIN'])
     return tournamentWinner
 
@@ -198,14 +194,13 @@ def calculateThirdPlacePlayoff(teams, semiFinalTeams, finalTeams):
         "homeTeam": thirdPlacePlayoffTeams[0],
         "awayTeam": thirdPlacePlayoffTeams[1],
         "homeWinOdds": teams[thirdPlacePlayoffTeams[0]]['winning_odds'],
-        "drawOdds": "0",
+        "draw": "0",
         "awayWinOdds": teams[thirdPlacePlayoffTeams[1]]['winning_odds']
     }]
 
 
 def playThirdPlacePlayoff(teams, fixture):
-    thirdPlaceWinner = play_match(fixture["homeTeam"], fixture["awayTeam"], fixture["homeWinOdds"],
-                                  fixture["drawOdds"], fixture["awayWinOdds"])
+    thirdPlaceWinner = play_match(**fixture)
     giveTeamGamePoints(teams, thirdPlaceWinner, GAME_POINTS['THIRD_PLACE_PLAYOFF_WIN'])
     return thirdPlaceWinner
 
