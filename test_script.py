@@ -39,9 +39,9 @@ def test_always_win_play():
     match = {
         "homeTeam": "Winner",
         "awayTeam": "Loser",
-        "homeTeamOdds": "1/2",
-        "drawOdds": "0",
-        "awayTeamOdds": "0"
+        "homeWinOdds": "1/2",
+        "draw": "0",
+        "awayWinOdds": "0"
     }
     assert play_match(**match) == "Winner"
 
@@ -51,9 +51,9 @@ def test_higher_odds():
     match = {
         "homeTeam": "Favourite",
         "awayTeam": "Underdog",
-        "homeTeamOdds": "1/2",
-        "drawOdds": "0",
-        "awayTeamOdds": "2/1"
+        "homeWinOdds": "1/2",
+        "draw": "0",
+        "awayWinOdds": "2/1"
     }
     for play in range(100):
         winner_list.append(play_match(**match))
