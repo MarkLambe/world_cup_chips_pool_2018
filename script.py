@@ -63,7 +63,6 @@ def score_group_stage(teams, groups, group_results):
 
 
 def calculateGroupStageWinners(teams, groups, groupStageFixtures):
-    fixtures = {}
     for group in groups:
         firstScore = secondScore = 0
         for team in groups[group]['teams']:
@@ -76,6 +75,12 @@ def calculateGroupStageWinners(teams, groups, groupStageFixtures):
                 secondScore = teams[team]['group_stage_points']
                 groups[group]['second'] = team
 
+def calculateGroupStageWinners2(teams, groups, groupStageFixtures):
+    for group in groups:
+        thisGroupTable = [(team, teams[team]['group_stage_points']) for team in groups[group]['teams'] ]
+        thisGroupTable.sort(key=lambda tup: tup[1], reverse=True)
+        print(thisGroupTable)
+        
 
 def print_group_results(teams, groups):
     print ("\n\n\nGroup Stage Results:")
@@ -204,6 +209,7 @@ def runGame(teams, groups, groupStageFixtures, doLogs):
     group_results = run_group_stage(groupStageFixtures)
     score_group_stage(teams, groups, group_results)
     calculateGroupStageWinners(teams, groups, groupStageFixtures)
+    calculateGroupStageWinners2(teams, groups, groupStageFixtures)
     if doLogs:
         print_group_results(teams, groups)
     roundOfSixteenFixtures = calculateRoundOfSixteenFixtures(teams, groups)
@@ -238,7 +244,7 @@ def printResultsToFile(teams, loopsDone):
 
 def main():
     teams, groups, groupStageFixtures = import_data()
-    for i in range(GAME_LOOPS):
+    for i in range(1):
         runGame(teams, groups, groupStageFixtures, False)
         if i % (GAME_LOOPS / 10) == 0 and i is not 0:
             printResultsToFile(teams, i)
