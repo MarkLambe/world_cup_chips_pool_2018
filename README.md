@@ -56,3 +56,8 @@ The script will output intermediate results every 10% of the way to completion.
 
 Known Issues:
 It doesn't fall back to head to head if two teams draw in the group stage, it just picks one.
+
+
+Tests:
+Install pytest 
+Run 'pytest {test_file}' i.e 'pytest test_script.py' from root of project
