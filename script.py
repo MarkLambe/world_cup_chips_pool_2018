@@ -4,7 +4,7 @@ import numpy as np
 from numpy.random import choice as npChoice
 import operator
 
-GAME_LOOPS = 5000000
+GAME_LOOPS = 1000 #5000000 was used for the actual submission, it took just over 5 hours
 GAME_POINTS = {
         'GROUP_STAGE_DRAW': 1,
         'GROUP_STAGE_WIN': 2,
@@ -65,26 +65,30 @@ def score_group_stage(teams, groups, group_results):
             giveTeamGamePoints(teams, result['result'], GAME_POINTS['GROUP_STAGE_WIN'])
             teams[result['result']]['group_stage_points'] += 3
 
-
-def calculateGroupStageWinners(teams, groups, groupStageFixtures):
-    for group in groups:
-        firstScore = secondScore = 0
-        for team in groups[group]['teams']:
-            if teams[team]['group_stage_points'] > firstScore:
-                secondScore = firstScore
-                firstScore = teams[team]['group_stage_points']
-                groups[group]['second'] = groups[group]['winner']
-                groups[group]['winner'] = team
-            elif teams[team]['group_stage_points'] > secondScore:
-                secondScore = teams[team]['group_stage_points']
-                groups[group]['second'] = team
-
-def calculateGroupStageWinners2(teams, groups, groupStageFixtures):
+"""
+There's some flaws here, like if three teams are level etc. But we don't have goals scored so just going to leave
+it at this.
+"""
+def calculateGroupStageWinners(teams, groups, groupStageFixtures, groupResults):
     for group in groups:
         thisGroupTable = [(team, teams[team]['group_stage_points']) for team in groups[group]['teams'] ]
         thisGroupTable.sort(key=lambda tup: tup[1], reverse=True)
-        print(thisGroupTable)
+        if thisGroupTable[0][1] != thisGroupTable[1][1]:
+            groups[group]['winner'] = thisGroupTable[0][0]
+            if thisGroupTable[1][1] != thisGroupTable[2][1]:
+                groups[group]['second'] = thisGroupTable[1][0]
+            else:
+                groups[group]['second'], thirdPlace = orderTiedGroupTeams(thisGroupTable[1][0], thisGroupTable[2][0], groupResults)
+        else:
+            groups[group]['winner'], groups[group]['second'] = orderTiedGroupTeams(thisGroupTable[0][0], thisGroupTable[1][0], groupResults)
         
+def orderTiedGroupTeams(firstTeam, secondTeam, groupResults):
+    match = [m for m in groupResults if (m["homeTeam"] == firstTeam and m["awayTeam"] == secondTeam) or 
+        (m["awayTeam"] == firstTeam and m["homeTeam"] == secondTeam)]
+    if match[0]["result"] == "Draw" or match[0]["result"] == firstTeam:
+        return firstTeam, secondTeam
+    else:
+        return secondTeam, firstTeam
 
 def print_group_results(teams, groups):
     print ("\n\n\nGroup Stage Results:")
@@ -203,7 +207,6 @@ def calculateThirdPlacePlayoff(teams, semiFinalTeams, finalTeams):
         "awayWinOdds": teams[thirdPlacePlayoffTeams[1]]['winning_odds']
     }]
 
-
 def playThirdPlacePlayoff(teams, fixture):
     thirdPlaceWinner = play_match(**fixture)
     giveTeamGamePoints(teams, thirdPlaceWinner, GAME_POINTS['THIRD_PLACE_PLAYOFF_WIN'])
@@ -218,8 +221,7 @@ def printGamePoints(teams):
 def runGame(teams, groups, groupStageFixtures, doLogs):
     group_results = run_group_stage(groupStageFixtures)
     score_group_stage(teams, groups, group_results)
-    calculateGroupStageWinners(teams, groups, groupStageFixtures)
-    calculateGroupStageWinners2(teams, groups, groupStageFixtures)
+    calculateGroupStageWinners(teams, groups, groupStageFixtures, group_results)
     if doLogs:
         print_group_results(teams, groups)
     roundOfSixteenFixtures = calculateRoundOfSixteenFixtures(teams, groups)
@@ -257,7 +259,7 @@ def printResultsToFile(teams, loopsDone):
 
 def main():
     teams, groups, groupStageFixtures = import_data()
-    for i in range(1):
+    for i in range(GAME_LOOPS):
         runGame(teams, groups, groupStageFixtures, False)
         if i % (GAME_LOOPS / 10) == 0 and i is not 0:
             printResultsToFile(teams, i)
