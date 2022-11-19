@@ -4,7 +4,30 @@ import numpy as np
 from numpy.random import choice as npChoice
 import operator
 
-GAME_LOOPS = 1000 #5000000 was used for the actual submission, it took just over 5 hours
+
+"""
+Entry:
+Netherlands: 8
+Portugal: 8
+USA: 4
+Germany: 5
+England: 5
+Uruguay: 5
+Denmark: 5
+
+
+Netherlands: 97.16 points.
+Portugal: 89.03 points.
+USA: 72.91 points.
+Germany: 68.06 points.
+England: 64.57 points.
+Uruguay: 62.57 points.
+Denmark: 62.16 points.
+Croatia: 61.04 points.
+Belgium: 56.44 points.
+
+"""
+GAME_LOOPS = 100000 #5000000 was used for the actual submission, it took just over 5 hours
 GAME_POINTS = {
         'GROUP_STAGE_DRAW': 1,
         'GROUP_STAGE_WIN': 2,
@@ -22,15 +45,10 @@ def import_data():
         return data["Teams"], data["Groups"], data["groupStageFixtures"]
 
 
-def convert_win_odds_to_probability(odds_string):
-    if odds_string == "EVS":
-        return 0.5
-    elif odds_string == "0":
+def convert_win_odds_to_probability(odds):
+    if float(odds) == 0:
         return 0
-    else:
-        nums = odds_string.split("/")
-        return round(float(nums[1]) / (float(nums[1]) + float(nums[0])), 4)
-
+    return round (1 / float(odds), 4)
 
 def giveTeamGamePoints(teams, team, points):
     teams[team]['game_points'] = teams[team]['game_points'] + (points * teams[team]['seed_value'])
@@ -105,58 +123,58 @@ def calculateRoundOfSixteenFixtures(teams, groups):
         {
           "homeTeam": groups['Group A']['winner'],
           "awayTeam": groups['Group B']['second'],
-          "homeWinOdds": teams[groups['Group A']['winner']]['winning_odds'],
+          "homeWinOdds": teams[groups['Group A']['winner']]['odds_to_reach_qf'],
           "draw": "0",
-          "awayWinOdds": teams[groups['Group B']['second']]['winning_odds']
+          "awayWinOdds": teams[groups['Group B']['second']]['odds_to_reach_qf']
         },
         {
           "homeTeam": groups['Group C']['winner'],
           "awayTeam": groups['Group D']['second'],
-          "homeWinOdds": teams[groups['Group C']['winner']]['winning_odds'],
+          "homeWinOdds": teams[groups['Group C']['winner']]['odds_to_reach_qf'],
           "draw": "0",
-          "awayWinOdds": teams[groups['Group D']['second']]['winning_odds']
+          "awayWinOdds": teams[groups['Group D']['second']]['odds_to_reach_qf']
         },
         {
           "homeTeam": groups['Group E']['winner'],
           "awayTeam": groups['Group F']['second'],
-          "homeWinOdds": teams[groups['Group E']['winner']]['winning_odds'],
+          "homeWinOdds": teams[groups['Group E']['winner']]['odds_to_reach_qf'],
           "draw": "0",
-          "awayWinOdds": teams[groups['Group F']['second']]['winning_odds']
+          "awayWinOdds": teams[groups['Group F']['second']]['odds_to_reach_qf']
         },
         {
           "homeTeam": groups['Group G']['winner'],
           "awayTeam": groups['Group H']['second'],
-          "homeWinOdds": teams[groups['Group G']['winner']]['winning_odds'],
+          "homeWinOdds": teams[groups['Group G']['winner']]['odds_to_reach_qf'],
           "draw": "0",
-          "awayWinOdds": teams[groups['Group H']['second']]['winning_odds']
+          "awayWinOdds": teams[groups['Group H']['second']]['odds_to_reach_qf']
         },
         {
           "homeTeam": groups['Group B']['winner'],
           "awayTeam": groups['Group A']['second'],
-          "homeWinOdds": teams[groups['Group B']['winner']]['winning_odds'],
+          "homeWinOdds": teams[groups['Group B']['winner']]['odds_to_reach_qf'],
           "draw": "0",
-          "awayWinOdds": teams[groups['Group A']['second']]['winning_odds']
+          "awayWinOdds": teams[groups['Group A']['second']]['odds_to_reach_qf']
         },
         {
           "homeTeam": groups['Group D']['winner'],
           "awayTeam": groups['Group C']['second'],
-          "homeWinOdds": teams[groups['Group D']['winner']]['winning_odds'],
+          "homeWinOdds": teams[groups['Group D']['winner']]['odds_to_reach_qf'],
           "draw": "0",
-          "awayWinOdds": teams[groups['Group C']['second']]['winning_odds']
+          "awayWinOdds": teams[groups['Group C']['second']]['odds_to_reach_qf']
         },
         {
           "homeTeam": groups['Group F']['winner'],
           "awayTeam": groups['Group E']['second'],
-          "homeWinOdds": teams[groups['Group F']['winner']]['winning_odds'],
+          "homeWinOdds": teams[groups['Group F']['winner']]['odds_to_reach_qf'],
           "draw": "0",
-          "awayWinOdds": teams[groups['Group E']['second']]['winning_odds']
+          "awayWinOdds": teams[groups['Group E']['second']]['odds_to_reach_qf']
         },
         {
           "homeTeam": groups['Group H']['winner'],
           "awayTeam": groups['Group G']['second'],
-          "homeWinOdds": teams[groups['Group H']['winner']]['winning_odds'],
+          "homeWinOdds": teams[groups['Group H']['winner']]['odds_to_reach_qf'],
           "draw": "0",
-          "awayWinOdds": teams[groups['Group G']['second']]['winning_odds']
+          "awayWinOdds": teams[groups['Group G']['second']]['odds_to_reach_qf']
         }
     ]
     
@@ -173,7 +191,7 @@ def pairwise(iterables):
         yield [iterables.pop(0), iterables.pop(0)]
 
 
-def playKnockOutRound(teams, fixtures, roundMultiplier):
+def playKnockOutRound(teams, fixtures, roundMultiplier, next_odds_key):
     pairs = pairwise(fixtures)
     nextRound = []
     for firstFixture, secondFixture in pairs:
@@ -184,9 +202,9 @@ def playKnockOutRound(teams, fixtures, roundMultiplier):
         nextRound.append({
           "homeTeam": result1,
           "awayTeam": result2,
-          "homeWinOdds": teams[result1]['winning_odds'],
+          "homeWinOdds": teams[result1][next_odds_key],
           "draw": "0",
-          "awayWinOdds": teams[result2]['winning_odds']
+          "awayWinOdds": teams[result2][next_odds_key]
         })
     return nextRound
 
@@ -214,8 +232,12 @@ def playThirdPlacePlayoff(teams, fixture):
 
 
 def printGamePoints(teams):
+    sorted_teams = []
     for team in teams:
-        print("{}: {} points.".format(team, teams[team]['game_points']))
+        sorted_teams.append({"name": team, **teams[team]})
+    sorted_teams.sort(key=lambda item: item.get("game_points") * -1)
+    for team in sorted_teams:
+        print("{}: {} points.".format(team["name"], round(team["game_points"] / GAME_LOOPS, 2)))
 
 
 def runGame(teams, groups, groupStageFixtures, doLogs):
@@ -227,28 +249,26 @@ def runGame(teams, groups, groupStageFixtures, doLogs):
     roundOfSixteenFixtures = calculateRoundOfSixteenFixtures(teams, groups)
     if doLogs:
         printKnockOutRoundOfFixtures(roundOfSixteenFixtures, "Round Of 16 Fixtures")
-    quarterFinalFixtures = playKnockOutRound(teams, roundOfSixteenFixtures, GAME_POINTS['LAST_SIXTEEN_WIN'])
+    quarterFinalFixtures = playKnockOutRound(teams, roundOfSixteenFixtures, GAME_POINTS['LAST_SIXTEEN_WIN'], 'odds_to_reach_qf')
     if doLogs:
         printKnockOutRoundOfFixtures(quarterFinalFixtures, "Quarter Final Fixtures")
-    semiFinalFixtures = playKnockOutRound(teams, quarterFinalFixtures, GAME_POINTS['QUARTER_FINAL_WIN'])
+    semiFinalFixtures = playKnockOutRound(teams, quarterFinalFixtures, GAME_POINTS['QUARTER_FINAL_WIN'], 'odds_to_reach_sf')
     semiFinalTeams = [semiFinalFixtures[0]["homeTeam"], semiFinalFixtures[0]["awayTeam"],
                       semiFinalFixtures[1]["homeTeam"], semiFinalFixtures[1]["awayTeam"]]
     if doLogs:
         printKnockOutRoundOfFixtures(semiFinalFixtures, "Semi Final Fixtures")
-    finalFixture = playKnockOutRound(teams, semiFinalFixtures, GAME_POINTS['SEMI_FINAL_WIN'])
+    finalFixture = playKnockOutRound(teams, semiFinalFixtures, GAME_POINTS['SEMI_FINAL_WIN'], 'odds_to_reach_final')
     finalTeams = [finalFixture[0]["homeTeam"], finalFixture[0]["awayTeam"]]
-    thirdPlaceFixture = calculateThirdPlacePlayoff(teams, semiFinalTeams, finalTeams)
+    #thirdPlaceFixture = calculateThirdPlacePlayoff(teams, semiFinalTeams, finalTeams)
     if doLogs:
         printKnockOutRoundOfFixtures(finalFixture, "Final Fixture")
-        printKnockOutRoundOfFixtures(thirdPlaceFixture, "Third Place Fixture")
+        #printKnockOutRoundOfFixtures(thirdPlaceFixture, "Third Place Fixture")
     tournamentWinner = playFinal(teams, finalFixture[0])
-    thirdPlaceWinner = playThirdPlacePlayoff(teams, thirdPlaceFixture[0])
+    #thirdPlaceWinner = playThirdPlacePlayoff(teams, thirdPlaceFixture[0])
     if doLogs:
-        print("{} has finished Third!".format(thirdPlaceWinner))
+        #print("{} has finished Third!".format(thirdPlaceWinner))
         print("{} has won the tournament!".format(tournamentWinner))
-    if doLogs:
-        printGamePoints(teams)
-
+    
 
 def printResultsToFile(teams, loopsDone):
     orderedResults = {k: v['game_points'] / loopsDone for k,v in teams.items()}
@@ -261,9 +281,11 @@ def main():
     teams, groups, groupStageFixtures = import_data()
     for i in range(GAME_LOOPS):
         runGame(teams, groups, groupStageFixtures, False)
-        if i % (GAME_LOOPS / 10) == 0 and i is not 0:
+        if i % (GAME_LOOPS / 10) == 0 and i != 0:
             printResultsToFile(teams, i)
     printResultsToFile(teams, GAME_LOOPS)
+    printGamePoints(teams)
+
 
 
 if __name__ == "__main__":
